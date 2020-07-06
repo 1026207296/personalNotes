@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组排序--冒泡排序</title>
+</head>
+<body>
+<script>
+    let ary = [100,56,89,20,11];
+    function fn(ary) {
+        for (var i = 0;i < ary.length - 1;i++){
+
+            for (var j = 0;j < ary.length - 1 - i;j++){
+                let temp = null;
+                // 升序排序
+                if(ary[j] > ary[j+1]){
+                    temp = ary[j];
+                    ary[j] = ary[j+1];
+                    ary[j+1] = temp;
+                }
+            }
+        }
+        return ary;
+    }
+    console.log(fn(ary));
+/* Array(5)
+    0: 11
+    1: 20
+    2: 56
+    3: 89
+    4: 100
+    length: 5
+    __proto__: Array(0)
+*/
+</script>
+</body>
+</html>

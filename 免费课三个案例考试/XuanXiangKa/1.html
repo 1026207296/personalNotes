@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项卡</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #box{
+        width: 600px;
+        height: 1000px;
+        margin: 20px auto;
+        text-align: center;
+    }
+    #box ul{
+        list-style: none;
+        display: flex;
+        position: relative;
+        top: 1px;
+    }
+    li{
+        margin-right: 40px;
+        width: 100px;
+        border: 1px solid darkred;
+    }
+    #box div{
+        width: 500px;
+        height: 200px;
+        line-height: 200px;
+        border: 1px solid green;
+        display: none;
+    }
+    #box ul .active{
+        border-bottom: 1px solid white;
+    }
+    #box .active{
+        display: block;
+    }
+</style>
+<body>
+<div id="box">
+    <ul>
+        <li class="active">年少有为</li>
+        <li>盗将行</li>
+        <li>起风了</li>
+    </ul>
+    <div class="active">假如我年少有为不自卑</div>
+    <div>枕风宿雪多年</div>
+    <div>你的眼中，明暗交杂，一笑生花</div>
+</div>
+<script>
+    let box = document.getElementById('box');
+    let navList = box.getElementsByTagName('li');
+    let boxList = box.getElementsByTagName('div');
+    console.log(navList,boxList);
+    for (var i = 0;i < navList.length;i++){
+        navList[i].myIndex = i;
+        navList[i].onclick = function () {
+            select(this.myIndex);
+        }
+    }
+    function select(index) {
+        for (var j = 0;j<navList.length;j++){
+            navList[j].className = '';
+            boxList[j].className = '';
+        }
+        navList[index].className = 'active';
+        boxList[index].className = 'active';
+    }
+</script>
+</body>
+</html>

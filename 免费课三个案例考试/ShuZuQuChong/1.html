@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组去重</title>
+</head>
+<body>
+<script>
+    let ary = [100,200,300,100,200];
+    let obj = {};
+    function fn(ary) {
+        for (var i = 0;i<ary.length;i++){
+            obj[ary[i]] = ary[i];
+        }
+        let newAry = [];
+        for(var key in obj){
+            newAry.push(obj[key]);
+        }
+        return newAry;
+    }
+    console.log(fn(ary));
+/*  Array(3)
+    0: 100
+    1: 200
+    2: 300
+    length: 3
+    __proto__: Array(0)
+*/
+</script>
+</body>
+</html>
